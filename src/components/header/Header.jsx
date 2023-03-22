@@ -1,9 +1,9 @@
 import './style.scss';
 
-const header = () => {
+const Header = () => {
   return (
     <div>header</div>
   )
 }
 
-export default header
+export default Header
