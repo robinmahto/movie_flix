@@ -1,9 +1,8 @@
 import axios from "axios";
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
-const TMDB_TOKEN = import.meta.TMDB_TOKEN;
 
 const headers = {
-    Authorization : `bearer ${TMDB_TOKEN}`
+    Authorization : `bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YmRlN2ZjMGMzZDAyMTU2YWE5NWNjMTE2OTJhZTZkNyIsInN1YiI6IjY0MTc1NWFiMGQ1ZDg1MDBlMGU2YjJmYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Z51-bX55tjLKl0-CUlDA4SSf-NBxM2ScyPurtiqZgBg`
 }
 
 export const fetchDataFromApi = async(url, params)=> {
