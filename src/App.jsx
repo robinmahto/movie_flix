@@ -11,28 +11,28 @@ import { getApiConfiguration } from './store/homeSlice';
 import { useDispatch } from 'react-redux';
 
 function App() {
-  
+
   const dispatch = useDispatch();
-  fetchDataFromApi('/configuration').then((res)=>{
+  fetchDataFromApi('/configuration').then((res) => {
     const url = {
-      backdrop : res.images.secure_base_url + "original",
-      poster : res.images.secure_base_url + "original",
-      profile : res.images.secure_base_url + "original",
+      backdrop: res.images.secure_base_url + "original",
+      poster: res.images.secure_base_url + "original",
+      profile: res.images.secure_base_url + "original",
     }
     dispatch(getApiConfiguration(url));
-  } ).catch((error)=> console.log(error))
+  }).catch((error) => console.log(error))
 
   return (
     <BrowserRouter>
-    <Header/>
-     <Routes>
-      <Route path='/' element={<Home/>} />
-      <Route path='/:mediaType/:id' element={<Details/>} />
-      <Route path='/search/:query' element={<SearchResult/>} />
-      <Route path='/explore/:mediaType' element={<Explore/>} />
-      <Route path='*' element={<PageNotFound/>} />
-     </Routes>
-     <Footer/>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/:mediaType/:id' element={<Details />} />
+        <Route path='/search/:query' element={<SearchResult />} />
+        <Route path='/explore/:mediaType' element={<Explore />} />
+        <Route path='*' element={<PageNotFound />} />
+      </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }
